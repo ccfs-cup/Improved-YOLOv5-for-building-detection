@@ -31,16 +31,15 @@ Return: List of file paths
 org_img_folder = #Source path
 imglist = getFileList(org_img_folder, [], 'jpg')
 
-def xiugai(d, b, alpha, beta,imgpath):
+def Improved_GridMask(d, b, alpha, beta,imgpath):
     im = cv2.imread(imgpath)
-
     width = im.shape[1]
     height = im.shape[0]
-    o = random.randint(200,1800)
-    p = random.randint(200,1800)
-    q = random.randint(200,400)
-    r = random.randint(200,400)    
-    for i in range (o,q+o,d):
+    o = random.randint(200,1800) #parameter o, the range can be changed by the images
+    p = random.randint(200,1800) #parameter p
+    q = random.randint(200,400)  #parameter q
+    r = random.randint(200,400)  #parameter r 
+    for i in range (o,q+o,d):     # create mask
         for j in range (p,r+p,b):
             for l in range (i,i+alpha):
                 if l>=width:
@@ -72,6 +71,6 @@ for imgpath in imglist:
         alpha = int(0.5 * d)
         beta = int(0.5 * b)
         #print(d, b,alpha, beta)
-        if(gailv<=30):
-            img2 = xiugai(d, b, alpha, beta,imgpath)
+        if(gailv<=20):  #gailv can control the The probability of using data augmentation
+            img2 = Improved_GridMask(d, b, alpha, beta,imgpath)
             cv2.imwrite(imgpath2, img2) 
