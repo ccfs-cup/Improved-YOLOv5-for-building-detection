@@ -10,6 +10,7 @@ The Building Dateset can be attached in the following link:
 
 # Experimental Design
 The overall process of building detection method is shown in the following figure, which includes the following steps: (1) Data augmentation is performed on the dataset, and an improved GridMask method is used to introduce random noise for simulating actual occlusion situations. (2) Sparse training is performed on the improved model to make the parameters of the BN layer approach 0. (3) We crop the BN layer parameters according to the pruning rate. (4) We replace the activation function with Mish and compare its effectiveness with different activation functions.
+
 ![Figure  8 The Experimental design](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/9ebc8f37-6639-454d-9b85-4e0c5531329b)
 
 
