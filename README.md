@@ -14,7 +14,19 @@ The overall process of building detection method is shown in the following figur
 ![Figure  8 The Experimental design](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/9ebc8f37-6639-454d-9b85-4e0c5531329b)
 
 The Pruning method we use is Network Slimming, its implementation in YOLOv5:https://github.com/midasklr/yolov5prune
+
 To replace different activation functions, models/common.py in the original implementation can be replaced to test different activation functions.
+
+# Testing Results
+Improved GridMask
+![体育馆遮挡测试](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/ab3b144a-540b-4081-9e7d-86573d7c728c)
+
+Pruning
+![10](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/a3c8a25c-3681-4cff-8724-243228aaae12)
+
+Activation funstions
+![11](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/44554e2a-bb18-44c9-9fdb-f4dd480f3287)
+
 
 
 
