@@ -1,4 +1,5 @@
 # YOLOv5 common modules
+# In the Conv module,the activation functions can be replaced to Mish, Swish, HardSwish, RReLU, Leaky_Relu.
 
 import math
 from copy import copy
@@ -40,6 +41,7 @@ class Conv(nn.Module):
         self.bn = nn.BatchNorm2d(c2)
         self.act = Mish() if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
         #self.act = SiLU() if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
+        #self.act = Hardswish() if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
         #self.act = nn.RReLU(lower=0.125, upper=0.3333333333333333, inplace=False) if act is True else (act if isinstance(act, nn.Module) else nn.Identity()) 
         #self.act = nn.LeakyReLU(negative_slope=0.01,inplace=False) if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
     def forward(self, x):
