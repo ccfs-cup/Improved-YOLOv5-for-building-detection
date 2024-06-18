@@ -1,11 +1,11 @@
 # Improved-YOLOv5-for-building-detection
 
-# Introduction:
+# Introduction
 This is the code for the article:"An Improved YOLOv5s Model for Building Detection", https://doi.org/10.3390/electronics13112197.
 
 We first collected a building dataset from real scenes and the internet, and applied an improved GridMask data augmentation method to expand the dataset and reduce the impact of occlusion. To make the model lightweight, we pruned the model by the channel pruning method, which decreases the computational costs of the model. Furthermore, we used Mish as the activation function to help the model converge better in sparse training.
 
-# Dataset:
+# Dataset
 The Building Dateset can be attached in the following link:
 
 # Experimental Design
@@ -13,6 +13,8 @@ The overall process of building detection method is shown in the following figur
 
 ![Figure  8 The Experimental design](https://github.com/ccfs-cup/Improved-YOLOv5-for-building-detection/assets/172787005/9ebc8f37-6639-454d-9b85-4e0c5531329b)
 
+The Pruning method we use is Network Slimming, its implementation in YOLOv5:https://github.com/midasklr/yolov5prune
+To replace different activation functions, models/common.py in the original implementation can be replaced to test different activation functions.
 
 
 
